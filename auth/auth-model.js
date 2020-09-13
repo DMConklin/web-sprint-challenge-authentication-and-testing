@@ -14,12 +14,12 @@ function findById(id) {
 
 function findBy(filter) {
 	return db("users")
-		.select("id", "username", "password", "department")
+		.select("id", "username", "password")
 		.where(filter)
 }
 
 function find() {
-	return db("users").select("id", "username", "department")
+	return db("users").select("id", "username")
 }
 
 module.exports = {
