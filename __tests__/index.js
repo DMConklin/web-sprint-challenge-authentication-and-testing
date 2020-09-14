@@ -2,6 +2,10 @@ const supertest = require('supertest')
 const server = require('../api/server')
 const dbConfig = require('../database/dbConfig')
 
+beforeAll(async () => {
+    await dbConfig.seed.run()
+})
+
 afterAll(async () => {
     await dbConfig.destroy()
 })
